@@ -6,7 +6,7 @@ Blog Project為網頁開發專案，會帶到一些SQL相關語法，但主要�
 本專案為phpMyAdmin操作說明書，如果不知如何操作phpMyAdmin，MySQL 資料庫，就來這專案吧 !   
 
 ##授權方式
-<等說明寫完才會編輯這一行>
+本專案選用的授權方式為GNU General Public License v2.0，詳情請訪問本目錄的LICENSE.txt檔案  
 
 
 ##開發環境
