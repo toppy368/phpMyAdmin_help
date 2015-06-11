@@ -48,7 +48,7 @@ MySQL是一個資料庫系統，你可以想像成是電子化的書櫃，或是
 
 ###初始設定：修改phpMyAdmin預設的root密碼
 ####1. 進入phpMyAdmin後台  
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/root_pw_error_head.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/root_pw_error_head.JPG)
 
 直接把路徑網址複製到瀏覽器上，就能進入phpMyAdmin登入畫面  
 
@@ -64,7 +64,7 @@ MySQL是一個資料庫系統，你可以想像成是電子化的書櫃，或是
 
 
 ####2. 進入使用者頁面，選擇"修改root權限"  
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/root_pw_error_2.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/root_pw_error_2.JPG)  
 進入phpMyAdmin之後，請按下"使用者"進入此頁面，本次要修改root帳號是**主機位置在localhost的root帳號**，請按下**"修改權限"**，或紅框圈起來的這一行，勾選之後按下**"執行"**就能修改該帳號的權限了  
 
 **Q： 畫面中有其他root帳號，那其他root也有管理員權限嗎 ? 錯誤訊息說沒有密碼的root會有安全性問題，怎麼不處裡其他root帳號 ?**   
@@ -72,11 +72,11 @@ MySQL是一個資料庫系統，你可以想像成是電子化的書櫃，或是
 
 
 ####3. 確認root帳號是否擁有全域權限  
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/root_pw_error_3.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/root_pw_error_3.JPG)  
 請確定你要修改的帳號是否正確 ? 這次要修改的是**'root'@'localhost'**這組帳號，表示是這台機器的**root管理員帳號**，如果沒錯，請檢查權限是否全選 ? 如果有問題，請按照圖片指示修改權限，如果沒問題，請將頁面往下轉到修改密碼的地方
 
 ####4. 修改root密碼
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/root_pw_error_4.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/root_pw_error_4.JPG)  
 頁面捲到最下面，有兩個表單，第一個表單是**修改密碼**，這個表單是**只能修改密碼的欄位**，另一個表單**能修改帳號與密碼**，如果你想**新增使用者**請填這個表單  
 
 填寫"修改登入資訊/複製使用者"表單時，帳號我這裡一樣是root (**參見Tips**)，主機位置請選擇**"本機"**，欄位請填寫**localhost**，再設定密碼，而無論上面的**"修改密碼"**表單或下面的**"修改使用者/複製使用者"**表單，密碼欄就跟一般申請帳號一樣，需要輸入兩組密碼，而phpMyAdmin則多了一組產生器，可以產生複雜的強密碼(理論上安全性比較高)，不過需要注意一點，一旦按下了**產生**，你自己**輸入的密碼將會被產生器的密碼取代掉**，而產生器旁面會顯示產生出來的密碼，**請將設定好的密碼抄下來妥善保存或背起來，待會修改congig.inc.php會用到**  
@@ -85,20 +85,20 @@ Tips：因為root是預設帳號，因此有可能有不肖人士會不斷用roo
 
 
 ####5. ERROR  
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/root_pw_error_5.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/root_pw_error_5.JPG)  
 錯誤訊息：**1045 - Access denied for user 'root'@'localhost'** (**using password: NO**) 
 一旦設定完成之後，底下root無密碼的提示會消失，但是重新整理頁面會顯示另一組錯誤訊息，原因是phpMyAdmin已幫我設定好了root帳號，但帳號跟預設在congig.inc.php設定檔的初始設定不同，所以會出現錯誤，將新密碼填入該檔案就OK了 ! 
 
 
 ####8. 開啟phpMyAdmin根目錄
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/config.inc_1.jpg)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/config.inc_1.jpg)  
 WAMP的phpMyAdmin資料夾在此目錄下：C:\wamp\apps\phpMyAdmin4.1.14  
 
 在任何WAMP伺服器中，管理SQL的後台為phpMyAdmin，而config.inc.php就存在phpMyAdmin資料夾中，請找到該資料夾才能找到該檔案  
 
 
 ####9. 開啟並修改congig.inc.php設定檔
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/config.inc_2.jpg)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/config.inc_2.jpg)  
 
 請透過搜尋方式找到並修改這幾行：  
 
@@ -112,34 +112,34 @@ WAMP的phpMyAdmin資料夾在此目錄下：C:\wamp\apps\phpMyAdmin4.1.14
 
 
 ####10. 回到phpMyAdmin使用者頁面，檢查root帳號是否已設定密碼  
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/Delete_root_1.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/Delete_root_1.JPG)  
 回到phpMyAdmin頁面，確定能正常進入後台之後，按下"使用者"回到權限管理頁面，確定root帳號的密碼變成"有"，確定上面把root設定密碼的操作正確無誤  
 
 **最後一個帳號確定有密碼，因此予以保留**
 
 
 ####11. 刪除其他使用者(包含root)  
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/Delete_root_2.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/Delete_root_2.JPG)  
 接下來這個步驟是倒數第二步了，這裡要解決第2步的疑問，因為只有最後一個主機位置在localhost帳號有設定密碼，所以我打算**刪除其他帳號，只保留有密碼的root**  
 
 把上面其他帳號打勾好之後，在**"刪除選中的使用者"**的選項打勾，此時會出現警語：  
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/Delete_root_3.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/Delete_root_3.JPG)  
 警語內容：  
 **您正要刪除**(**DESTROY**)**一個完整的資料庫！**  
 **您確定要執行 "DROP DATABASE"？**
 
 請按下**"確定"**，回到使用者頁面
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/Delete_root_2.JPG) 
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/Delete_root_2.JPG) 
 確定上面的**帳號勾選無誤**，且**刪除使用者**的選項也勾選無誤後，請按下左下角的**執行**，**刪除**勾選的帳號
 
 
 ####12. 完成設定  
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/Delete_root_4.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/Delete_root_4.JPG)  
 警語：**1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1**  
 此時會出現警語，但這警語按一下就會關閉，而且重新整理也沒出現異常  
 
 之後按下**"使用者"**，就會出現這個畫面
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/Delete_root_5.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/Delete_root_5.JPG)
 確認帳號只剩下我這一組位於localhost的root帳號之後，所有設定root帳號密碼及刪除其他帳號的動作都完成了 !   
 
 如果大家還是不放心，可以重新進入phpMyAdmin，應該是可以正常運作才對，SQL章節**修改root密碼**的**所有步驟**都完成了 !   
@@ -150,10 +150,10 @@ WAMP的phpMyAdmin資料夾在此目錄下：C:\wamp\apps\phpMyAdmin4.1.14
 ###透過phpMyAdmin匯入SQL檔
 
 ####1.進入phpMyAdmin主畫面
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_import_1.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_import_1.JPG)
 
 ####2. 新增資料庫
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_import_2.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_import_2.JPG)
 可用此SQL指令替代：**CREATE DATABASE 資料庫名稱；**  
 請到左邊資料庫選單中選擇"新增"選項，然後到右邊紅框框起來的地方，**最左邊第一格**請輸入你想新增的**資料庫名稱**、**第二項**請選擇**資料庫編碼**，考慮到使用者可能是不同國籍的人，為了語言相容性，所以本專案的資料庫設定成**utf8_unicode_ci**(**參見註解**)，**想採用utf8mb4的開發者，請將編碼資料庫設定為utf8mb4_unicode**  
 
@@ -162,7 +162,7 @@ WAMP的phpMyAdmin資料夾在此目錄下：C:\wamp\apps\phpMyAdmin4.1.14
 2. phpMyAdmin在5.5以後開始支援utf8mb4編碼，而 [Wordpress也採用此編碼] (https://tw.wordpress.org/2015/04/29/wordpress-4-2/) ，不過我目前還是以UTF-8為主(想採用utf8mb4的開發者，請將編碼資料庫設定為utf8mb4_unicode)  
 
 ####3. 匯入資料庫
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_import_3.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_import_3.JPG)
 新增資料庫看到成功訊息之後，請直接到右邊的資料庫選擇區中，選擇剛才建立的資料庫，選好之後，請按下**匯入**進到此頁面  
 
 確定現在要匯入的位置是剛才剛新建好的資料庫後，請選擇**要匯入的檔案**，我選擇同樣名稱的blog_project.sql，根據後台說明，從虛擬主機下載下來的.zip檔也可以匯入  
@@ -172,7 +172,7 @@ WAMP的phpMyAdmin資料夾在此目錄下：C:\wamp\apps\phpMyAdmin4.1.14
 如果上面這些選項都沒有問題，請按下"執行"，將SQL檔匯入此資料庫
 
 ####4. 匯入成功
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_import_4.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_import_4.JPG)  
 看到這訊息，就成功了 ! 成功將檔案匯入到剛才建好的資料庫當中，現在你可以直接從phpMyAdmin編輯這個資料庫
 ###透過phpMyAdmin匯出SQL檔(備份成 *.sql檔)
 舊文網址：[WordPress 多種方式的網誌備份教學<<toppy368的研究書房] (http://www.toppy368.tw/archives/1437)  
@@ -180,14 +180,14 @@ WAMP的phpMyAdmin資料夾在此目錄下：C:\wamp\apps\phpMyAdmin4.1.14
  
 
 ####1. 進入phpMyAdmin主頁面
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_Backup_1.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_Backup_1.JPG)
 這裡假設大家已經在自己的電腦裡安裝好伺服器軟體或WAMP架構並可進入phpMyAdmin，或申請好虛擬主機並設定好root帳密者，如果無法進入，請看前面章節  
 
 **請大家先以root帳號登入phpMyadmin首頁**，確定正確登入再進行第二步  
 
 
 ####2. phpMyAdmin資料庫介面說明
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_Backup_2.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_Backup_2.JPG)
 先說明資料庫的介面好了：  
 左邊紅框顯示的是**資料庫選單**，一台SQL主機可能有好幾個資料庫，包含運作此資料庫的必要資料庫在內，你可以在此選擇你想備份的資料庫  
 右邊上面紅框框起來的是**功能選單，**按下SQL可以下達SQL指令、也有匯出資料或匯入資料或搜尋等功能
@@ -195,7 +195,7 @@ WAMP的phpMyAdmin資料夾在此目錄下：C:\wamp\apps\phpMyAdmin4.1.14
 
 
 ####3. 選定資料庫並按下"匯出"
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_Backup_3.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_Backup_3.JPG)
 請按下右邊的資料庫，本專案的資料庫名稱為"blog_project"，選中之後，會顯示裏頭的資料表，接下來請按下"匯出"，匯出資料庫
 
 ####4. 匯出選項
@@ -204,11 +204,11 @@ WAMP的phpMyAdmin資料夾在此目錄下：C:\wamp\apps\phpMyAdmin4.1.14
 新版phpMyAdmin的**匯出選項**區分為**"快速"**及**"自訂"**兩種，以下將針對這兩種選項說明
 
 **4A. 快速匯出**
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_Backup_4A.JPG)  
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_Backup_4A.JPG)  
 快速匯出只要檢查資料庫名稱是否正確，再確認格式是否為SQL(下載為 .sql 檔)，之後按下執行，就會跳出下載畫面，直接下載.sql檔就好
 
 **4B. 自訂匯出**
-![image] (https://github.com/toppy368/Blog_Project/blob/master/Readme_image/SQL_Backup_4B.JPG)
+![image] (https://github.com/toppy368/phpMyAdmin_help/blob/master/Readme_image/SQL_Backup_4B.JPG)
 自訂匯出選項可以讓你自訂匯出的資料表、檔案編碼等等，你可以檢查資料表是否全選(如果漏選可能會造成網站異常)，還有檔案編碼是否正確等等(匯出的編碼要與匯入的格式相同)  
 
 確定沒問題，就跟快速匯出一樣，畫面移動到最下方，按下**"執行"**，下載.sql檔就完成了  
